@@ -1,6 +1,6 @@
 FROM apache/tika:latest-full
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade && \
     apt-get -y install curl \
     tesseract-ocr-all
 
