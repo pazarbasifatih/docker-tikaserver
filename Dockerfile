@@ -4,7 +4,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get -y install curl \
     tesseract-ocr-all
 
-RUN apt-get upgrade clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY --chown=root:root assets/entrypoint.sh assets/tika-config.template.xml /
 RUN chmod +x /entrypoint.sh
