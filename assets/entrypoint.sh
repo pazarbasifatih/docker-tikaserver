@@ -30,4 +30,4 @@ echo "--------------------------"
 cat ${GENERATE_FILE}
 echo "--------------------------"
 
-["java", "-jar", "/tika-server-${TIKA_VERSION}.jar", "-h", "0.0.0.0", "-p", "9998", "--config", "${GENERATE_FILE}", "--cors", "https://us-central1-i18n-48e8c.cloudfunctions.net/*", "i18n-48e8c.appspot.com/*", "*//localhost:3000", "*//localhost:5000"]
+java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 -p 9998 --config ${GENERATE_FILE} --cors i18n-48e8c.appspot.com/*
