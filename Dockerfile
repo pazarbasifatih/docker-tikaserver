@@ -2,12 +2,12 @@ FROM ubuntu:groovy as base
 RUN apt-get update
 
 FROM base as dependencies
+ENV TIKA_VERSION 1.24.1
 ARG JRE='openjdk-14-jre-headless'
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install $JRE gdal-bin tesseract-ocr \
-        apt-get update && \
-        apt-get -y install curl tesseract-ocr-all
-        
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install $JRE gdal-bin tesseract-ocr curl tesseract-ocr-all
+
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y xfonts-utils fonts-freefont-ttf fonts-liberation ttf-mscorefonts-installer wget cabextract
 
@@ -37,9 +37,6 @@ RUN apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ARG TIKA_VERSION
 ENV TIKA_VERSION=$TIKA_VERSION
 COPY --from=fetch_tika /tika-server-${TIKA_VERSION}.jar /tika-server-${TIKA_VERSION}.jar
-
-RUN apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 COPY --chown=root:root assets/entrypoint.sh assets/tika-config.template.xml /
 RUN chmod +x /entrypoint.sh
 
