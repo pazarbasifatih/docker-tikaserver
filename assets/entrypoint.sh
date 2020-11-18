@@ -18,12 +18,12 @@ sed "s/GENERATE_DATE/${GENERATE_DATE}/g" ${TEMPLATE_FILE} | \
     sed "s/TIKA_OFFICE_INCLUDE_PHONETIC/${TIKA_OFFICE_INCLUDE_PHONETIC:-false}/g" | \
     sed "s/TIKA_OFFICE_USE_SAX_EXTRACTOR/${TIKA_OFFICE_USE_SAX_EXTRACTOR:-true}/g" | \
     sed "s/TIKA_OFFICE_DATE_OVERRIDE_FORMAT/${TIKA_OFFICE_DATE_OVERRIDE_FORMAT:-dd-mm-yyyy}/g" | \
-    sed "s/TIKA_TESSERACT_OCR_LANGUAGE/${TIKA_TESSERACT_OCR_LANGUAGE:-eng+rus+ara+chi_sim+kor+jpn+kat+grc+heb}/g" | \
+    sed "s/TIKA_TESSERACT_OCR_LANGUAGE/${TIKA_TESSERACT_OCR_LANGUAGE:-eng+tur+rus+ara+chi_sim+kor+jpn+kat+grc+heb+hin}/g" | \
     sed "s/TIKA_TESSERACT_OCR_TIMEOUT/${TIKA_TESSERACT_OCR_TIMEOUT:-120}/g" | \
     sed "s/TIKA_TESSERACT_OCR_AUTO_ROTATE/${TIKA_TESSERACT_OCR_AUTO_ROTATE:-false}/g" | \
     sed "s/TIKA_PDF_INCLUDE_BOOKMARK/${TIKA_PDF_INCLUDE_BOOKMARK:-false}/g" | \
     sed "s/TIKA_PDF_INCLUDE_ANNOTATION/${TIKA_PDF_INCLUDE_ANNOTATION:-false}/g" | \
-    sed "s/TIKA_PDF_OCR_STRATEGY/${TIKA_PDF_OCR_STRATEGY:-ocr_and_text}/g" > ${GENERATE_FILE}
+    sed "s/TIKA_PDF_OCR_STRATEGY/${TIKA_PDF_OCR_STRATEGY:-auto}/g" > ${GENERATE_FILE}
 
 echo "Config generation finished. ${GENERATE_FILE}"
 echo "--------------------------"
