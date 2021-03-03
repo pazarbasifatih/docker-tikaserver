@@ -31,4 +31,5 @@ cat ${GENERATE_FILE}
 echo "--------------------------"
 
 ENTRYPOINT ["java", "-jar", "/tika-server-${TIKA_VERSION}.jar", "-h", "0.0.0.0", "-p", ":9998", "-enableUnsecureFeatures", "-enableFileUrl", "--config", "${GENERATE_FILE}", "--cors", "all"]
+
 # java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 -p 9998 -enableUnsecureFeatures -enableFileUrl --config ${GENERATE_FILE} --cors all
