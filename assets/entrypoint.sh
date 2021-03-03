@@ -30,4 +30,4 @@ echo "--------------------------"
 cat ${GENERATE_FILE}
 echo "--------------------------"
 
-[ "/bin/sh", "-c", "exec java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 $0 $@"]
+ENTRYPOINT [ "/bin/sh", "-c", "exec java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 $0 $@"]
