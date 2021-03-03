@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 TEMPLATE_FILE=/tika-config.template.xml
 GENERATE_FILE=/tika-config.xml
