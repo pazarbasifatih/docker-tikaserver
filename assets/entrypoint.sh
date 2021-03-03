@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 TEMPLATE_FILE=/tika-config.template.xml
 GENERATE_FILE=/tika-config.xml
@@ -30,4 +30,5 @@ echo "--------------------------"
 cat ${GENERATE_FILE}
 echo "--------------------------"
 
-java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 -p 9998 -enableUnsecureFeatures -enableFileUrl --config ${GENERATE_FILE} --cors i18n-48e8c.appspot.com/* 
+["java", "-jar" ,"/tika-server-${TIKA_VERSION}.jar", "-h", "0.0.0.0", "-p", "9998", "-enableUnsecureFeatures", "-enableFileUrl", "--config", "${GENERATE_FILE}", "--cors", "i18n-48e8c.appspot.com/*"]
+# i18n-48e8c.appspot.com/* 
