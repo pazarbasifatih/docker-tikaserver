@@ -1,4 +1,4 @@
-FROM apache/tika:1.25-full
+FROM apache/tika:latest-full
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get -y install curl \
